@@ -66,7 +66,7 @@ ansible ALL=(ALL) NOPASSWD: ALL
 &nbsp;
 
 ```sh
-sudo vim /etc/ansible/hosts
+$ sudo vim /etc/ansible/hosts
 ```
 
 **_INSERT_**
@@ -82,28 +82,27 @@ ansible ec2 -m ping -u <user-name>
 key-pair is the .pem file associated with the ec2 instance
 
 ```sh
-ssh-agent bash
-chmod 600 <key-pair>.pem
-ssh-add <key-pair>.pem
-ansible ec2 -m ping -u <user-name>
+$ ssh-agent bash
+$ chmod 600 <key-pair>.pem
+$ ssh-add <key-pair>.pem
+$ ansible ec2 -m ping -u <user-name>
 ```
 
 ### AWS Console Access
 
 ```sh
-sudo pip install awscli
-aws
-aws configure
+$ sudo pip install awscli
+$ aws configure
 ```
 
 ### Store credentials in keys.yml file and encrypt with ansible vault
 
 ```sh
-cat keys.yml
+$ cat keys.yml
 AWS_ACCESS_KEY_ID: test
 AWS_SECRET_ACCESS_KEY: test2
 AWS_REGION: us-east-1
-ansible-vault encrypt /home/ansible/keys.yml
+$ ansible-vault encrypt /home/ansible/keys.yml
 ```
 
 > When running encrypted file use flag --ask-vault-pass
