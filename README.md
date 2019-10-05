@@ -74,9 +74,10 @@ $ sudo vim /etc/ansible/hosts
 ```sh
 localhost
 ec2 ansible_host=<ip of ec2 instance>
-ansible ec2 -m ping -u <user-name>
 ```
-
+```sh
+$ ansible ec2 -m ping -u <user-name>
+```
 ### Working with 'ssh-agent' to connect to <user-name>
 
 key-pair is the .pem file associated with the ec2 instance
